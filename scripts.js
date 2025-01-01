@@ -6,6 +6,10 @@ async function fetchData() {
     populateTable(toolsData);
 }
 
+function formatCurrency(amount) {
+    return `$${new Intl.NumberFormat('en-US', { maximumFractionDigits: 2 }).format(amount)}`;
+}
+
 function populateTable(data) {
     const tableBody = document.getElementById('toolsTable');
     tableBody.innerHTML = '';
@@ -13,8 +17,8 @@ function populateTable(data) {
         const row = document.createElement('tr');
         row.innerHTML = `
             <td>${tool.name}</td>
-            <td>${tool.coinAmount}</td>
-            <td>${tool.usdAmount}</td>
+            <td>${formatCurrency(tool.coinAmount)}</td>
+            <td>${formatCurrency(tool.usdAmount)}</td>
         `;
         row.onclick = () => openModal(tool);
         tableBody.appendChild(row);
@@ -39,7 +43,7 @@ function sortTable(field, order) {
 
 function openModal(tool) {
     document.getElementById('toolName').textContent = tool.name;
-    document.getElementById('toolDetails').textContent = `Coin Amount: ${tool.coinAmount} | USD Amount: ${tool.usdAmount}`;
+    document.getElementById('toolDetails').textContent = `Coin Amount: ${formatCurrency(tool.coinAmount)} | USD Amount: ${formatCurrency(tool.usdAmount)}`;
     document.getElementById('toolModal').classList.add('active');
 }
 
