@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Islands Tools List</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="https://cdn.discordapp.com/attachments/1314767830830415892/1322954723925557358/7e93834208f1ae613b6b3777e088d026.png" type="image/png">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Islands Tools List</h1>
+    <div class="container">
+        <div class="sidebar">
+            <h2>Sort Options</h2>
+            <button onclick="sortTable('name', 'asc')">Sort by Name (A-Z)</button>
+            <button onclick="sortTable('name', 'desc')">Sort by Name (Z-A)</button>
+            <button onclick="sortTable('coinAmount', 'asc')">Cheapest by Coins</button>
+            <button onclick="sortTable('coinAmount', 'desc')">Most Expensive by Coins</button>
+            <button onclick="sortTable('usdAmount', 'asc')">Cheapest by USD</button>
+            <button onclick="sortTable('usdAmount', 'desc')">Most Expensive by USD</button>
+        </div>
+        <div class="table-container">
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Search tools..." oninput="filterTable()">
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th onclick="sortTable('name', 'asc')">Name</th>
+                        <th onclick="sortTable('coinAmount', 'asc')">Coin Amount</th>
+                        <th onclick="sortTable('usdAmount', 'asc')">USD Amount</th>
+                    </tr>
+                </thead>
+                <tbody id="toolsTable"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="modal" id="toolModal">
+        <div class="modal-content">
+            <h3 id="toolName"></h3>
+            <p id="toolDetails"></p>
+            <button onclick="closeModal()">Close</button>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
