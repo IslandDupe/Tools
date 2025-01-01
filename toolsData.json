@@ -1590,7 +1590,7 @@
     { "name": "Aquamarine Totem", "coinAmount": 0, "usdAmount": 0 },
     { "name": "LED Light", "coinAmount": 0, "usdAmount": 0 },
     { "name": "Petroleum Tank", "coinAmount": 0, "usdAmount": 0 },
-    { "name": "Vending Machine", "coinAmount": 9,500,000, "usdAmount": 0 },
+    { "name": "Vending Machine", "coinAmount": 9500000, "usdAmount": 0 },
     { "name": "Blue Neon Light Diner Sign", "coinAmount": 0, "usdAmount": 0 },
     { "name": "Pink Neon Light Shake", "coinAmount": 0, "usdAmount": 0 },
     { "name": "Yellow Neon Light Shake", "coinAmount": 0, "usdAmount": 0 },
